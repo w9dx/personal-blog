@@ -5,11 +5,13 @@ import AboutPage from "./pages/AboutPage";
 import ArticleListPage from "./pages/ArticlesListPage";
 import ArticlePage from "./pages/ArticlePage";
 import Layout from "./components/Layout";
+import NotFoundPage from "./pages/NotFound";
 
 const routes = [
   {
     path: "/",
     element: <Layout />,
+    errorElement: <NotFoundPage />,
     children: [
       {
         path: "/",
@@ -27,7 +29,7 @@ const routes = [
         path: "/articles/:name",
         element: <ArticlePage />,
       },
-    ], 
+    ],
   },
 ];
 

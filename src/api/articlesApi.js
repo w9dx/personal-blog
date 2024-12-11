@@ -76,4 +76,7 @@ const articles = [
   },
 ];
 
-export default articles;
+export const articlesApi = {
+  getAll: () => articles,
+  getByName: (name) => articles.find((a) => a.name === name),
+};
