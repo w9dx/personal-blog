@@ -3,9 +3,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ArticleListPage from "./pages/ArticlesListPage";
-import ArticlePage from "./pages/ArticlePage";
 import Layout from "./components/Layout";
 import NotFoundPage from "./pages/NotFound";
+import ArticlePage from "./pages/ArticlePage";
+import { articleLoader } from "./pages/loaders/articles.js";
 
 const routes = [
   {
@@ -28,6 +29,7 @@ const routes = [
       {
         path: "/articles/:name",
         element: <ArticlePage />,
+        loader: articleLoader,
       },
     ],
   },
