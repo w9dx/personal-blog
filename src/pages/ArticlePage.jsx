@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-import { articlesApi } from "../api/articlesApi";
+
+import { articlesApi } from "../services/articlesApi";
 import CommentsList from "./components/CommentsList";
-import axios from "axios";
+import AddCommentForm from "./components/AddCommentForm";
 
 export default function ArticlePage() {
   const { name } = useParams();
@@ -11,16 +12,23 @@ export default function ArticlePage() {
   const [upvotes, setUpvotes] = useState(initialUpvotes);
 
   useEffect(() => {
-    setArticle(articlesApi.getByName(name));
+    const loadArticle = async () => {
+      const article = await articlesApi.getByName(name);
+      setArticle(article);
+    };
+    loadArticle();
   }, [name]);
   async function onUpvoteClick() {
-    const response = await axios.post(
-      `${import.meta.env.VITE_API_ENDPOINT}/api/articles/${name}/upvote`
-    );
-    const updatedArticle = response.data;
+    const updatedArticle = await articlesApi.upvote(name);
     setUpvotes(updatedArticle.upvotes);
   }
-
+  const onAddComment = async ({ postedBy, commentText }) => {
+    const updatedComments = await articlesApi.addComment({
+      postedBy,
+      commentText,
+    });
+    setUpvotes(updatedComments);
+  };
   return (
     <>
       <h1>{article?.title}</h1>
@@ -29,6 +37,7 @@ export default function ArticlePage() {
       {article?.content?.map((para) => (
         <p key={para}>{para}</p>
       ))}
+      <AddCommentForm onAddComment={onAddComment} />
       <CommentsList comments={comments} />
     </>
   );

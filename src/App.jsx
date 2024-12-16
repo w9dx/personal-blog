@@ -6,7 +6,7 @@ import ArticleListPage from "./pages/ArticlesListPage";
 import Layout from "./components/Layout";
 import NotFoundPage from "./pages/NotFound";
 import ArticlePage from "./pages/ArticlePage";
-import { articleLoader } from "./pages/loaders/articles.js";
+import { articleLoader, articlesLoader } from "./loaders/articles.js";
 
 const routes = [
   {
@@ -25,6 +25,7 @@ const routes = [
       {
         path: "/articles",
         element: <ArticleListPage />,
+        loader: articlesLoader,
       },
       {
         path: "/articles/:name",
