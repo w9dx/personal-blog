@@ -7,6 +7,7 @@ import Layout from "./components/Layout";
 import NotFoundPage from "./pages/NotFound";
 import ArticlePage from "./pages/ArticlePage";
 import { articleLoader, articlesLoader } from "./loaders/articles.js";
+import ShowCaseListPage from "./pages/showcases/ShowCaseListPage.jsx";
 
 const routes = [
   {
@@ -21,6 +22,10 @@ const routes = [
       {
         path: "/about",
         element: <AboutPage />,
+      },
+      {
+        path: "/showcases",
+        element: <ShowCaseListPage />,
       },
       {
         path: "/articles",
