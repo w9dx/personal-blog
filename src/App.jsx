@@ -8,7 +8,7 @@ import NotFoundPage from "./pages/NotFound";
 import ArticlePage from "./pages/ArticlePage";
 import { articleLoader, articlesLoader } from "./loaders/articles.js";
 import ShowCaseListPage from "./pages/showcases/ShowCaseListPage.jsx";
-import FlexBoxDemo from "./pages/showcases/flexboxdemo/Index.jsx";
+import FlexBoxDemo from "./pages/showcases/flexboxdemo/index.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import CreateAccountPage from "./pages/CreateAccountPage.jsx";
 
