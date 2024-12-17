@@ -1,4 +1,7 @@
 import myPicture from "../assets/ME.jpg";
+import linkedinIcon from "../assets/icons/linkedin_icon.svg";
+import githubIcon from "../assets/icons/github_icon.svg";
+
 export default function AboutPage() {
   return (
     <>
@@ -16,14 +19,30 @@ export default function AboutPage() {
             technologies and improve my skills.
           </p>
           <p>
-            I'm currently looking for opportunity to dedicate as a fullstack
-            developer. If you interested in my profile, please feel free to
-            contact me.
+            I&apos;m currently looking for opportunity to dedicate as a
+            fullstack developer. If you interested in my profile, please feel
+            free to contact me.
           </p>
-          <a href="https://www.linkedin.com/in/ngoc-pham-24613417b/">
-            Linkedin
+        </div>
+      </div>
+      <div className="flex gap-3 ">
+        <div>
+          <a
+            href="https://www.linkedin.com/in/ngoc-pham-24613417b/"
+            target="_blank"
+          >
+            <img
+              className="h-6 w-6"
+              src={linkedinIcon}
+              alt="My Linkedin Profile"
+            />
+            <span>LinkedIn</span>
           </a>
         </div>
+        <a href="https://github.com/w9dx" target="_blank">
+          <img className="h-6 w-6" src={githubIcon} alt="My Github Profile" />
+          <span>Github</span>
+        </a>
       </div>
     </>
   );
