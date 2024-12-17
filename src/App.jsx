@@ -9,6 +9,8 @@ import ArticlePage from "./pages/ArticlePage";
 import { articleLoader, articlesLoader } from "./loaders/articles.js";
 import ShowCaseListPage from "./pages/showcases/ShowCaseListPage.jsx";
 import FlexBoxDemo from "./pages/showcases/flexboxdemo/Index.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import CreateAccountPage from "./pages/CreateAccountPage.jsx";
 
 const routes = [
   {
@@ -19,6 +21,14 @@ const routes = [
       {
         path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
+      {
+        path: "/create-account",
+        element: <CreateAccountPage />,
       },
       {
         path: "/about",
