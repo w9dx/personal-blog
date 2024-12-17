@@ -8,8 +8,10 @@ import AddCommentForm from "./components/AddCommentForm";
 export default function ArticlePage() {
   const { name } = useParams();
   const [article, setArticle] = useState([]);
-  const { upvotes: initialUpvotes, comments } = useLoaderData();
+  const { upvotes: initialUpvotes, comments: initialComments } =
+    useLoaderData();
   const [upvotes, setUpvotes] = useState(initialUpvotes);
+  const [comments, setComments] = useState(initialComments);
 
   useEffect(() => {
     const loadArticle = async () => {
@@ -23,11 +25,11 @@ export default function ArticlePage() {
     setUpvotes(updatedArticle.upvotes);
   }
   const onAddComment = async ({ postedBy, commentText }) => {
-    const updatedComments = await articlesApi.addComment({
+    const updatedArticle = await articlesApi.addComment(name, {
       postedBy,
       commentText,
     });
-    setUpvotes(updatedComments);
+    setComments(updatedArticle.comments);
   };
   return (
     <>
