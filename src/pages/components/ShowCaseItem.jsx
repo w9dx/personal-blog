@@ -15,7 +15,7 @@ export default function ShowCaseItem({
       </div>
       <div>
         <a href={references} target="_blank">
-          {references}
+          Challenges: {references}
         </a>
       </div>
     </div>

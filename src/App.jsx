@@ -8,6 +8,7 @@ import NotFoundPage from "./pages/NotFound";
 import ArticlePage from "./pages/ArticlePage";
 import { articleLoader, articlesLoader } from "./loaders/articles.js";
 import ShowCaseListPage from "./pages/showcases/ShowCaseListPage.jsx";
+import FlexBoxDemo from "./pages/showcases/flexboxdemo/Index.jsx";
 
 const routes = [
   {
@@ -26,6 +27,10 @@ const routes = [
       {
         path: "/showcases",
         element: <ShowCaseListPage />,
+      },
+      {
+        path: "/showcases/flexboxdemo",
+        element: <FlexBoxDemo />,
       },
       {
         path: "/articles",
