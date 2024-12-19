@@ -11,7 +11,7 @@ export default function ShowCaseItem({
         <p className="showcase-list__item__text__description">{descriptions}</p>
       </div>
       <div className="showcase-list__item__image">
-        <img width={800} src={imgSrc} alt="showcase" />
+        <img src={imgSrc} alt="showcase" />
       </div>
       <div>
         <a href={references} target="_blank">
