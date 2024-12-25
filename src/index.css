@@ -2,11 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto; /* Always allow vertical scrolling */
+  scrollbar-gutter: stable;
+}
+/* Hide scrollbar */
+body {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For IE and Edge */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -57,19 +77,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 nav {
   background-color: #333;
   padding: 10px;
@@ -88,7 +95,8 @@ nav li {
 }
 
 nav a {
-  color: white;
+  /* color: #000000; */
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
   padding: 5px 10px;
@@ -98,10 +106,12 @@ nav a {
 
 nav a:hover {
   background-color: #555;
+  /* background-color: #bac9cc; */
+  /* color: #000000; */
 }
 
 a h3 {
-  color: #333;
+  color: #fff;
   margin-bottom: 0.5em;
 }
 
