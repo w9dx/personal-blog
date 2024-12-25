@@ -12,7 +12,7 @@ export default function HomePage() {
     <>
       <div className="flex w-full gap-4">
         <div className="profile-card w-1/3 rounded-lg bg-secondary p-4 shadow-lg">
-          <img className="" src={myPicture} />
+          <img className="" src={myPicture} alt="My Picture" />
           <h2 className="text-white text-lg">Andrew Pham</h2>
           <p>
             A software developer with a passion for creating beautiful and
