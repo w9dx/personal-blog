@@ -11,6 +11,10 @@ export default function CreateAccountPage() {
   const [error, setError] = useState(null);
 
   async function createAccount() {
+    if (!email || !password || !confirmPassword) {
+      setError("Email and password not provided");
+      return;
+    }
     if (password !== confirmPassword) {
       setError("Passwords do not match!");
       return;
@@ -23,31 +27,38 @@ export default function CreateAccountPage() {
     }
   }
   return (
-    <>
-      <h1>Login</h1>
-      {error && <p>{error}</p>}
-      <input
-        type="text"
-        placeholder="Your email Address"
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      />
-      <input
-        type="password"
-        placeholder="Your Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Confirm Password"
-        value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
-      />
-      <button onClick={createAccount}>Create Account</button>
-      <Link to={"/login"}>Already have account? Login in</Link>
-    </>
+    <div className="mx-auto w-96 rounded-lg border border-secondary p-4 shadow-lg">
+      <h2 className="mb-2 text-2xl font-bold">Create account</h2>
+      {error && <p className="text-danger">{error}</p>}
+      <div className="flex flex-col gap-4">
+        <input
+          type="text"
+          placeholder="Your email Address"
+          value={email}
+          className="rounded-lg bg-secondary p-2"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+        <input
+          type="password"
+          placeholder="Your Password"
+          value={password}
+          className="rounded-lg bg-secondary p-2"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          value={confirmPassword}
+          className="rounded-lg bg-secondary p-2"
+          onChange={(e) => setConfirmPassword(e.target.value)}
+        />
+        <button onClick={createAccount}>Create Account</button>
+        <Link className="text-center" to={"/login"}>
+          Already have account? Login in
+        </Link>
+      </div>
+    </div>
   );
 }
