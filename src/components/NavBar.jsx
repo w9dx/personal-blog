@@ -6,20 +6,20 @@ export default function NavBar() {
   const { isLoading, user } = useUser();
   const navigate = useNavigate();
   return (
-    <nav className="flex justify-center items-center w-full rounded-lg shadow-lg mb-4 ">
+    <nav className="mb-4 flex w-full items-center justify-center rounded-lg shadow-lg">
       <div className="logo h-12 w-12">
         {/* <img src={logo} alt="My Logo" /> */}
       </div>
-      <ul className="w-3/4 mx-auto">
+      <ul className="mx-auto w-3/4">
         <li>
           <Link to={"/"}>Home</Link>
         </li>
         <li>
-          <Link to={"/showcases"}>Show Cases</Link>
+          <Link to={"/about"}>About Me</Link>
         </li>
-        <li>
-          <Link to={"/about"}>About</Link>
-        </li>
+        {/* <li>
+          <Link to={"/about/showcases"}>Show Cases</Link>
+        </li> */}
         <li>
           <Link to={"/articles"}>Articles</Link>
         </li>

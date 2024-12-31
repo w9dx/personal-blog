@@ -33,17 +33,20 @@ const routes = [
       {
         path: "/about",
         element: <AboutPage />,
+        children: [
+          {
+            path: "showcases",
+            element: <ShowCaseListPage />,
+          },
+          {
+            path: "showcases/flexboxdemo",
+            element: <FlexBoxDemo />,
+          },
+        ],
       },
+
       {
-        path: "/showcases",
-        element: <ShowCaseListPage />,
-      },
-      {
-        path: "/showcases/flexboxdemo",
-        element: <FlexBoxDemo />,
-      },
-      {
-        path: "/articles",
+        path: "/about/articles",
         element: <ArticleListPage />,
         loader: articlesLoader,
       },
