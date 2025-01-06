@@ -1,8 +1,8 @@
 import { axiosInstance } from "./axiosInstance";
 
 export const articlesApi = {
-  getAll: async () => {
-    const response = await axiosInstance.get("/api/articles");
+  getAll: async (type) => {
+    const response = await axiosInstance.get("/api/articles?type=" + type);
     const articles = response.data;
     return articles;
   },
@@ -19,7 +19,7 @@ export const articlesApi = {
   addComment: async (name, { postedBy, commentText }) => {
     const response = await axiosInstance.post(
       `/api/articles/${name}/comments`,
-      { postedBy, commentText }
+      { postedBy, commentText },
     );
     const article = response.data;
     return article;
