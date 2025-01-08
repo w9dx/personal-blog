@@ -13,7 +13,7 @@ export default function ShowCaseListPage() {
         descriptions={" "}
         references={`https://www.frontendmentor.io/challenges/bento-grid-RMydElrlOj`}
         imgSrc={flexboxDemo}
-        previewLink={"https://flex-box-demo.netlify.app/"}
+        previewLink={"https://andrew-frontend-challenge-flexbox.netlify.app"}
       />
       <ShowCaseItem
         title={"Frontend Mentor Challenge: Product List"}
