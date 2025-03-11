@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,7 +12,6 @@ export default function LoginPage() {
         setError("Email and password not provided");
         return;
       }
-      await signInWithEmailAndPassword(getAuth(), email, password);
       navigate("/articles");
     } catch (error) {
       setError(error.message);
