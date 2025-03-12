@@ -11,6 +11,7 @@ import ShowCaseListPage from "./pages/showcases/ShowCaseListPage.jsx";
 import FlexBoxDemo from "./pages/showcases/flexboxdemo/index.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import CreateAccountPage from "./pages/CreateAccountPage.jsx";
+import GalleryPage from "./pages/GalleryPage.jsx";
 
 const routes = [
   {
@@ -29,6 +30,10 @@ const routes = [
       {
         path: "/create-account",
         element: <CreateAccountPage />,
+      },
+      {
+        path: "/gallery",
+        element: <GalleryPage />,
       },
       {
         path: "/about",
@@ -59,9 +64,23 @@ const routes = [
   },
 ];
 
+function setTheme(theme) {
+  let root = document.documentElement;
+  if (theme === "light") {
+    root.style.setProperty("--bg-color", "#ECF2FF");
+    root.style.setProperty("--text-color", "#2B283A");
+    root.style.setProperty("--title-color", "#4A4E74");
+  } else if (theme === "dark") {
+    root.style.setProperty("--bg-color", "#2B283A");
+    root.style.setProperty("--text-color", "#ECF2FF");
+    root.style.setProperty("--title-color", "#D5D4D8");
+  }
+}
+
 const router = createBrowserRouter(routes);
 
 function App() {
+  setTheme("light");
   return (
     <>
       <RouterProvider router={router}></RouterProvider>

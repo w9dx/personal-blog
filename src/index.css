@@ -55,7 +55,7 @@ body {
 
 h1 {
   font-size: 3.2em;
-  line-height: 1.1;
+  line-height: 1.5;
 }
 
 button {
@@ -128,18 +128,54 @@ a:hover {
   font-size: 3rem;
 }
 .excited:hover {
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-name: jump;
-    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: jump;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
 }
 
 @keyframes jump {
-    0%   { transform: scale(1,1)      translateY(0); }
-    10%  { transform: scale(1.1,.9)   translateY(0); }
-    30%  { transform: scale(.9,1.1)   translateY(-100px); }
-    50%  { transform: scale(1.05,.95) translateY(0); }
-    57%  { transform: scale(1,1)      translateY(-7px); }
-    64%  { transform: scale(1,1)      translateY(0); }
-    100% { transform: scale(1,1)      translateY(0); }
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.9, 1.1) translateY(-100px);
+  }
+  50% {
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+.item {
+  position: relative;
+  margin: 0 0 10px;
+}
+
+.caption {
+  display: none;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.caption a {
+  color: white;
+}
+
+.item:hover .caption {
+  display: block;
 }

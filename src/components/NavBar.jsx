@@ -14,9 +14,9 @@ export default function NavBar() {
         <li>
           <Link to={"/about"}>About Me</Link>
         </li>
-        {/* <li>
-          <Link to={"/about/showcases"}>Show Cases</Link>
-        </li> */}
+        <li>
+          <Link to={"/gallery"}>Cats</Link>
+        </li>
       </ul>
       <button>Login</button>
 
