@@ -1,32 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Card from "../components/ui/Card";
+import { useUnsplash } from "../hooks/useUnsplash";
 
 function GalleryPage() {
-  const clientID = "t-FQWYk2PUt13LidWIblzu7SNd9HVOQsK3QA7Lg1Mg4";
   const utm = "?utm_source=scrimba_degree&utm_medium=referral";
-  var API_KEY = "NpRvp4rxQt7jYkbu95fWvCMrZKxyQKlWcNZfzeopGfI";
-
-  let [photos, setPhotos] = useState([]);
-  let [query, setQuery] = useState("cat");
-  let queryInput = useRef(null);
-  const numberOfPhotos = 20;
-  const url =
-    "https://api.unsplash.com/photos/random/?count=" +
-    numberOfPhotos +
-    "&client_id=" +
-    clientID;
-
-  useEffect(() => {
-    const photosUrl = query ? `${url}&query=${query}` : url;
-    fetch(photosUrl)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        console.log(data);
-        setPhotos(data);
-      });
-  }, [query, url]);
+  const queryInput = useRef(null);
+  const { photos } = useUnsplash("cats");
+  const query = "cats";
 
   const searchPhotos = (e) => {
     e.preventDefault();
