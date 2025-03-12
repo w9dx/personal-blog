@@ -1,22 +1,30 @@
-import { useRef } from "react";
-import Card from "../components/ui/Card";
+import { useRef, useState } from "react";
 import { useUnsplash } from "../hooks/useUnsplash";
 
 function GalleryPage() {
   const utm = "?utm_source=scrimba_degree&utm_medium=referral";
   const queryInput = useRef(null);
-  const { photos } = useUnsplash("cats");
-  const query = "cats";
+  const [query, setQuery] = useState("cats");
+
+  const { photos } = useUnsplash(query);
 
   const searchPhotos = (e) => {
     e.preventDefault();
     setQuery(queryInput.current.value);
   };
   return (
-    <Card className={"text-center"}>
-      <h2>🙀</h2>
-      <h1>Andy&apos;s Website</h1>
-      <div className="grid grid-cols-2 gap-1">
+    <div className="box">
+      <h2 className="text-center text-5xl">🙀</h2>
+      <h1 className="text-center">You should relax</h1>
+      <div className="py-2">
+        <input
+          type="text"
+          ref={queryInput}
+          className="rounded-lg bg-secondary p-2"
+        />{" "}
+        <button onClick={searchPhotos}>Search</button>
+      </div>
+      <div className="gallery-grid">
         {query
           ? photos.map((photo) => {
               return (
@@ -28,26 +36,16 @@ function GalleryPage() {
                   />
                   <div className="caption">
                     <span className="credits">Photo by </span>
-                    <a
-                      className="text-[#fff]"
-                      href={photo.user.links.html + utm}
-                    >
-                      {photo.user.name}
-                    </a>
-                    <span className="text-[#fff]"> on </span>
-                    <a
-                      className="text-[#fff]"
-                      href={"https://unsplash.com" + utm}
-                    >
-                      Unsplash
-                    </a>
+                    <a href={photo.user.links.html + utm}>{photo.user.name}</a>
+                    <span> on </span>
+                    <a href={"https://unsplash.com" + utm}>Unsplash</a>
                   </div>
                 </div>
               );
             })
           : ""}
       </div>
-    </Card>
+    </div>
   );
 }
 

@@ -1,5 +1,126 @@
 #root {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   padding: 2rem;
+}
+
+.grid {
+  column-count: 2;
+  column-gap: 10px;
+}
+
+.item {
+  position: relative;
+  margin: 0 0 10px;
+}
+
+.caption {
+  display: none;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.caption a {
+  color: white;
+}
+
+.item:hover .caption {
+  display: block;
+}
+
+.excited {
+  font-size: 3rem;
+}
+.excited:hover {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: jump;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+@keyframes jump {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.9, 1.1) translateY(-100px);
+  }
+  50% {
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+.item {
+  margin: 0 0 10px;
+  position: relative;
+}
+
+h2 {
+  margin: 0;
+  font-size: 40px;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 50px;
+}
+
+html {
+  padding: 0 20px;
+}
+.img {
+  box-sizing: border-box;
+  width: 100% !important;
+  height: auto !important;
+  border: 5px solid var(--main-color);
+}
+
+.caption {
+  display: none;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.caption a {
+  color: white;
+}
+
+.item:hover .caption {
+  display: block;
+}
+
+.gallery-grid {
+  /* 
+  BONUS CHALLENGE: adjust how many columns you'd like to have
+  */
+  column-count: 3;
+  column-gap: 10px;
+}
+
+.img {
+  /* 
+  border-image: var(--sweets) 100;
+  */
 }

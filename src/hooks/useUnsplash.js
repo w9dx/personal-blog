@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const clientID = "t-FQWYk2PUt13LidWIblzu7SNd9HVOQsK3QA7Lg1Mg4";
 
-export const useUnsplash = (queryInput) => {
+export const useUnsplash = (query) => {
   let [photos, setPhotos] = useState([]);
 
   const numberOfPhotos = 20;
@@ -13,16 +13,15 @@ export const useUnsplash = (queryInput) => {
     clientID;
 
   useEffect(() => {
-    const photosUrl = queryInput ? `${url}&query=${queryInput}` : url;
+    const photosUrl = query ? `${url}&query=${query}` : url;
     fetch(photosUrl)
       .then(function (response) {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
         setPhotos(data);
       });
-  }, [queryInput, url]);
+  }, [query, url]);
 
   return { photos };
 };

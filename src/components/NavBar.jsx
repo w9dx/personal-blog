@@ -15,11 +15,10 @@ export default function NavBar() {
           <Link to={"/about"}>About Me</Link>
         </li>
         <li>
-          <Link to={"/gallery"}>Cats</Link>
+          <Link to={"/gallery"}>Chill Gallery</Link>
         </li>
       </ul>
       <button>Login</button>
-
     </nav>
   );
 }
