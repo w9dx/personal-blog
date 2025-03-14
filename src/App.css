@@ -4,11 +4,6 @@
   padding: 2rem;
 }
 
-.grid {
-  column-count: 2;
-  column-gap: 10px;
-}
-
 .item {
   position: relative;
   margin: 0 0 10px;
@@ -115,12 +110,24 @@ html {
   /* 
   BONUS CHALLENGE: adjust how many columns you'd like to have
   */
-  column-count: 3;
+  column-count: 4;
   column-gap: 10px;
 }
 
-.img {
-  /* 
-  border-image: var(--sweets) 100;
-  */
+@media screen and (max-width: 1280px) {
+  .gallery-grid {
+    column-count: 3;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .gallery-grid {
+    column-count: 2;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gallery-grid {
+    column-count: 1;
+  }
 }
